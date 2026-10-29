@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gym Membership &amp; Class Booking System — Requirements Survey</title>
+<style>
+:root{--navy:#17324d;--teal:#147d83;--mint:#eaf4f5;--bluewash:#eef3f8;--text:#243746;--muted:#617180;--border:#d8e2e8;--white:#fff;--shadow:0 12px 32px rgba(23,50,77,.08)}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#edf5f7 0,#f6f8fb 340px,#f6f8fb 100%);font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--text);line-height:1.5}
+.wrap{width:min(900px,calc(100% - 32px));margin:36px auto 54px}.hero{background:var(--navy);color:var(--white);border-radius:22px;padding:30px clamp(20px,4vw,42px);box-shadow:var(--shadow);position:relative;overflow:hidden}.hero:after{content:"";position:absolute;right:-50px;top:-80px;width:260px;height:260px;border:34px solid rgba(255,255,255,.07);border-radius:50%}.eyebrow{text-transform:uppercase;letter-spacing:.13em;font-size:.76rem;font-weight:800;color:#9de1dc;margin-bottom:10px}.hero h1{margin:0;font-size:clamp(1.7rem,4vw,2.45rem);line-height:1.12;max-width:650px}.hero p{margin:14px 0 0;color:#dce7ef;max-width:680px}.progressline{display:flex;gap:10px;align-items:center;margin-top:20px;color:#dce7ef;font-size:.88rem}.progress-track{height:6px;background:rgba(255,255,255,.18);border-radius:99px;flex:1;overflow:hidden}.progress-fill{height:100%;width:0;background:#75d0c8;transition:width .2s;border-radius:99px}
+.section-heading{margin:27px 2px 12px;display:flex;align-items:center;gap:10px;color:var(--navy);font-size:1.18rem}.section-heading .pill{font-size:.74rem;background:var(--mint);color:var(--teal);padding:5px 9px;border-radius:99px;font-weight:700}.section-note{color:var(--muted);margin:0 2px 10px}.question-card{background:var(--white);border:1px solid var(--border);box-shadow:0 4px 16px rgba(23,50,77,.035);border-radius:16px;padding:19px 21px;margin:12px 0}.question-meta{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:11px}.number{display:inline-grid;place-items:center;background:var(--navy);color:#fff;border-radius:8px;width:32px;height:28px;font-size:.78rem;font-weight:800}.kind,.area{border-radius:99px;padding:4px 9px;font-size:.73rem;font-weight:700}.kind{background:#e9f5f3;color:#126c70}.area{background:var(--bluewash);color:#526579}.question{display:block;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:12px}textarea{display:block;width:100%;min-height:82px;resize:vertical;border:1px solid #cbd8e0;border-radius:10px;padding:12px 13px;font:inherit;color:var(--text);background:#fcfdff;outline:none}textarea:focus,input:focus-visible{outline:3px solid rgba(20,125,131,.18);border-color:var(--teal)}textarea::placeholder{color:#98a5b0}.options{display:flex;gap:10px;flex-wrap:wrap}.option{display:flex;align-items:center;gap:9px;border:1px solid #cbd8e0;border-radius:10px;padding:10px 15px;min-width:112px;cursor:pointer;background:#fcfdff}.option:has(input:checked){background:var(--mint);border-color:var(--teal);color:var(--navy)}.option input{accent-color:var(--teal);width:16px;height:16px}.actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:24px}.btn{border:0;border-radius:11px;padding:13px 19px;font:inherit;font-weight:800;cursor:pointer}.btn-primary{background:var(--teal);color:white;box-shadow:0 6px 14px rgba(20,125,131,.18)}.btn-secondary{background:#e8eef3;color:var(--navy)}.footnote{font-size:.84rem;color:var(--muted);margin-top:14px}.status{margin-top:14px;color:var(--teal);font-weight:700;min-height:1.2rem}.footer{text-align:center;color:#758491;font-size:.78rem;margin-top:26px}
+@media(max-width:560px){.wrap{width:min(100% - 20px,900px);margin-top:12px}.hero{border-radius:16px;padding:24px 18px}.question-card{padding:16px 14px}.section-heading{font-size:1.05rem}.option{flex:1}}
+@media print{body{background:white}.wrap{width:100%;margin:0}.hero{background:white;color:var(--navy);box-shadow:none;border:1px solid var(--border)}.hero p,.progressline{color:var(--muted)}.question-card{box-shadow:none;break-inside:avoid}.actions,.footnote,.status{display:none}}
+
+.report-wrap{margin:22px 0 28px;background:#fff;border:1px solid var(--border);border-radius:18px;padding:22px;box-shadow:0 4px 16px rgba(23,50,77,.035)}
+.report-wrap h2{color:var(--navy);margin:0 0 8px;font-size:1.35rem}
+.report-intro{color:var(--muted);margin:0 0 18px}
+.report-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.report-card{border:1px solid var(--border);border-left:4px solid var(--teal);background:#fbfdff;border-radius:12px;padding:15px 16px}
+.report-card h3{color:var(--navy);font-size:1rem;margin:0 0 7px}
+.report-card p{margin:0;font-size:.92rem;color:var(--text)}
+.report-conclusion{margin-top:13px;padding:15px 16px;border-radius:12px;background:var(--mint);color:var(--text)}
+.report-conclusion strong{color:var(--navy)}
+.report-note{font-size:.82rem;color:var(--muted);margin:13px 0 0}
+@media(max-width:650px){.report-grid{grid-template-columns:1fr}.report-wrap{padding:17px}}
+@media print{.report-wrap{box-shadow:none;break-inside:auto}.report-card{break-inside:avoid}}
+
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Task 3 · Requirements Gathering</div>
+    <h1>Gym Membership &amp;<br>Class Booking System</h1>
+    <p>This questionnaire gathers information about the current process, system goals, interviewees’ opinions, and their feelings about the proposed system. Please answer all 10 questions.</p>
+    <div class="progressline"><span id="progressText">0 of 10 answered</span><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div></div>
+  </header>
+
+  <section class="report-wrap" aria-labelledby="reportTitle">
+    <h2 id="reportTitle">System Analysis Report</h2>
+    <p class="report-intro">This report summarizes the project scenario and the intended requirements for the Gym Membership &amp; Class Booking System.</p>
+    <div class="report-grid">
+      <article class="report-card">
+        <h3>1. Current State of the System</h3>
+        <p>Based on the project scenario and sample answers, membership details are recorded in spreadsheets, while class bookings are checked electronically through the gym’s web page. Some tasks may still involve manual recording. Staff may spend extra time tracking membership expiry dates, payment status, and class availability. These separate steps can make it harder to prevent booking conflicts and keep records accurate.</p>
+      </article>
+      <article class="report-card">
+        <h3>2. System Goals</h3>
+        <p>The proposed system should keep member profiles, membership plans, payment details, and renewal dates in one place. It should let members view class schedules and available places, book or cancel classes, and receive useful reminders. Staff should manage schedules and attendance, update membership status, and generate reports while reducing manual work and booking errors.</p>
+      </article>
+      <article class="report-card">
+        <h3>3. Interviewee Opinions</h3>
+        <p>The sample responses suggest that users expect faster membership management, fewer booking mistakes, easier access to payment and expiry information, and better service. Trainers may benefit from accurate attendance lists, while managers may value reports about membership activity and class demand.</p>
+      </article>
+      <article class="report-card">
+        <h3>4. Interviewee Feelings</h3>
+        <p>The sample interviewee feels positive because the system may make daily tasks easier. The closed-ended response indicates that the interviewee is not concerned about learning to use it, although clear instructions would still be helpful. Other users may feel differently, so their feedback should be collected before implementation.</p>
+      </article>
+    </div>
+    <div class="report-conclusion"><strong>Conclusion:</strong> The system should centralize membership and payment information, simplify class booking and cancellation, keep class availability accurate, and provide useful reports. A clear interface and suitable instructions can help staff and members adopt the system.</div>
+    <p class="report-note">Note: This is a sample project report based on the supplied project scenario and example answers, not verified results from real interviews.</p>
+  </section>
+
+  <form id="surveyForm">
+    <h2 class="section-heading">Section A <span class="pill">5 open-ended questions</span></h2>
+    <p class="section-note">Write your response in the blank text area under each question.</p>
+    <section class="question-card">
+      <div class="question-meta"><span class="number">Q1</span><span class="kind">Open-ended</span><span class="area">Current State of the System</span></div>
+      <label class="question" for="q1">How are memberships and class bookings currently recorded and managed?</label>
+      <textarea id="q1" name="q1" rows="3" required placeholder="Type your response here..." aria-label="Answer to question 1"></textarea>
+    </section>
+<section class="question-card">
+      <div class="question-meta"><span class="number">Q2</span><span class="kind">Open-ended</span><span class="area">Current State of the System</span></div>
+      <label class="question" for="q2">What problems do you face when managing memberships, payments, and class schedules?</label>
+      <textarea id="q2" name="q2" rows="3" required placeholder="Type your response here..." aria-label="Answer to question 2"></textarea>
+    </section>
+<section class="question-card">
+      <div class="question-meta"><span class="number">Q3</span><span class="kind">Open-ended</span><span class="area">System Goals</span></div>
+      <label class="question" for="q3">What tasks or features should the new system provide to improve gym operations?</label>
+      <textarea id="q3" name="q3" rows="3" required placeholder="Type your response here..." aria-label="Answer to question 3"></textarea>
+    </section>
+<section class="question-card">
+      <div class="question-meta"><span class="number">Q4</span><span class="kind">Open-ended</span><span class="area">Interviewee Opinions</span></div>
+      <label class="question" for="q4">What benefits do you expect from the proposed Gym Membership & Class Booking System?</label>
+      <textarea id="q4" name="q4" rows="3" required placeholder="Type your response here..." aria-label="Answer to question 4"></textarea>
+    </section>
+<section class="question-card">
+      <div class="question-meta"><span class="number">Q5</span><span class="kind">Open-ended</span><span class="area">Interviewee Feelings</span></div>
+      <label class="question" for="q5">How do you feel about using the new system, and what concerns do you have?</label>
+      <textarea id="q5" name="q5" rows="3" required placeholder="Type your response here..." aria-label="Answer to question 5"></textarea>
+    </section>
+    <h2 class="section-heading">Section B <span class="pill">5 closed-ended questions</span></h2>
+    <p class="section-note">Choose one answer: Yes or No. No option is selected by default.</p>
+    <section class="question-card">
+      <div class="question-meta"><span class="number">Q6</span><span class="kind">Closed-ended / Bipolar</span><span class="area">Current State of the System</span></div>
+      <label class="question" for="q6">Do staff currently record memberships or class bookings manually?</label>
+      <div class="options" role="radiogroup" aria-label="Answer to question 6">
+          <label class="option"><input type="radio" name="q6" value="Yes" required><span>Yes</span></label>
+          <label class="option"><input type="radio" name="q6" value="No" required><span>No</span></label>
+        </div>
+    </section>
+<section class="question-card">
+      <div class="question-meta"><span class="number">Q7</span><span class="kind">Closed-ended / Bipolar</span><span class="area">Current State of the System</span></div>
+      <label class="question" for="q7">Do you experience problems such as class overbooking or difficulty tracking expired memberships?</label>
+      <div class="options" role="radiogroup" aria-label="Answer to question 7">
+          <label class="option"><input type="radio" name="q7" value="Yes" required><span>Yes</span></label>
+          <label class="option"><input type="radio" name="q7" value="No" required><span>No</span></label>
+        </div>
+    </section>
+<section class="question-card">
+      <div class="question-meta"><span class="number">Q8</span><span class="kind">Closed-ended / Bipolar</span><span class="area">System Goals</span></div>
+      <label class="question" for="q8">Should the system automatically update class availability and membership status?</label>
+      <div class="options" role="radiogroup" aria-label="Answer to question 8">
+          <label class="option"><input type="radio" name="q8" value="Yes" required><span>Yes</span></label>
+          <label class="option"><input type="radio" name="q8" value="No" required><span>No</span></label>
+        </div>
+    </section>
+<section class="question-card">
+      <div class="question-meta"><span class="number">Q9</span><span class="kind">Closed-ended / Bipolar</span><span class="area">Interviewee Opinions</span></div>
+      <label class="question" for="q9">Do you think the new system will make membership management and class booking easier?</label>
+      <div class="options" role="radiogroup" aria-label="Answer to question 9">
+          <label class="option"><input type="radio" name="q9" value="Yes" required><span>Yes</span></label>
+          <label class="option"><input type="radio" name="q9" value="No" required><span>No</span></label>
+        </div>
+    </section>
+<section class="question-card">
+      <div class="question-meta"><span class="number">Q10</span><span class="kind">Closed-ended / Bipolar</span><span class="area">Interviewee Feelings</span></div>
+      <label class="question" for="q10">Are you concerned about learning how to use the new system?</label>
+      <div class="options" role="radiogroup" aria-label="Answer to question 10">
+          <label class="option"><input type="radio" name="q10" value="Yes" required><span>Yes</span></label>
+          <label class="option"><input type="radio" name="q10" value="No" required><span>No</span></label>
+        </div>
+    </section>
+    <div class="actions">
+      <button class="btn btn-primary" type="submit">Submit &amp; Download Responses</button>
+      <button class="btn btn-secondary" type="reset">Clear form</button>
+    </div>
+  </form>
+  <p class="footnote">This is a standalone web form. It does not send responses to a server. After submission, your browser downloads the answers as a JSON file.</p>
+  <div class="status" id="status" role="status" aria-live="polite"></div>
+  <div class="footer">Gym Membership &amp; Class Booking System · System Analysis Report &amp; Requirements Survey</div>
+</main>
+<script>
+const questions = [{"num": 1, "kind": "Open-ended", "area": "Current State of the System", "question": "How are memberships and class bookings currently recorded and managed?", "type": "textarea"}, {"num": 2, "kind": "Open-ended", "area": "Current State of the System", "question": "What problems do you face when managing memberships, payments, and class schedules?", "type": "textarea"}, {"num": 3, "kind": "Open-ended", "area": "System Goals", "question": "What tasks or features should the new system provide to improve gym operations?", "type": "textarea"}, {"num": 4, "kind": "Open-ended", "area": "Interviewee Opinions", "question": "What benefits do you expect from the proposed Gym Membership & Class Booking System?", "type": "textarea"}, {"num": 5, "kind": "Open-ended", "area": "Interviewee Feelings", "question": "How do you feel about using the new system, and what concerns do you have?", "type": "textarea"}, {"num": 6, "kind": "Closed-ended / Bipolar", "area": "Current State of the System", "question": "Do staff currently record memberships or class bookings manually?", "type": "radio"}, {"num": 7, "kind": "Closed-ended / Bipolar", "area": "Current State of the System", "question": "Do you experience problems such as class overbooking or difficulty tracking expired memberships?", "type": "radio"}, {"num": 8, "kind": "Closed-ended / Bipolar", "area": "System Goals", "question": "Should the system automatically update class availability and membership status?", "type": "radio"}, {"num": 9, "kind": "Closed-ended / Bipolar", "area": "Interviewee Opinions", "question": "Do you think the new system will make membership management and class booking easier?", "type": "radio"}, {"num": 10, "kind": "Closed-ended / Bipolar", "area": "Interviewee Feelings", "question": "Are you concerned about learning how to use the new system?", "type": "radio"}];
+const form = document.getElementById('surveyForm');
+function answeredCount() {
+  return questions.reduce((total, q) => {
+    if (q.type === 'textarea') return total + (document.getElementById('q' + q.num).value.trim() ? 1 : 0);
+    return total + (document.querySelector('input[name="q' + q.num + '"]:checked') ? 1 : 0);
+  }, 0);
+}
+function updateProgress() {
+  const count = answeredCount();
+  document.getElementById('progressText').textContent = count + ' of 10 answered';
+  document.getElementById('progressFill').style.width = (count * 10) + '%';
+}
+form.addEventListener('input', updateProgress);
+form.addEventListener('change', updateProgress);
+form.addEventListener('reset', () => setTimeout(() => { updateProgress(); document.getElementById('status').textContent = ''; }, 0));
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  if (!form.reportValidity()) return;
+  const responses = {};
+  for (const q of questions) {
+    const answer = q.type === 'textarea'
+      ? document.getElementById('q' + q.num).value.trim()
+      : document.querySelector('input[name="q' + q.num + '"]:checked').value;
+    responses['Q' + q.num] = { category: q.area, question: q.question, answer };
+  }
+  const blob = new Blob([JSON.stringify({ project: 'Gym Membership & Class Booking System', submittedAt: new Date().toISOString(), responses }, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a'); link.href = url; link.download = 'gym_system_survey_responses.json';
+  document.body.appendChild(link); link.click(); link.remove(); URL.revokeObjectURL(url);
+  document.getElementById('status').textContent = 'Responses downloaded successfully.';
+});
+updateProgress();
+</script>
+</body>
+</html>
