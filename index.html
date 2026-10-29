@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gym Membership & Class Booking System — Requirements Survey</title>
+<style>
+:root{--navy:#17324d;--teal:#167d8d;--bg:#f4f7fa;--ink:#243746;--muted:#5c6b78;--line:#d9e2e9;--pale:#eaf4f6;--white:#fff}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+header{background:linear-gradient(125deg,var(--navy),#24546c);color:white;padding:34px 18px 28px}
+.wrap{max-width:900px;margin:0 auto;padding:0 16px} header h1{font-size:clamp(1.7rem,4vw,2.35rem);line-height:1.15;margin:0 0 10px}header p{margin:0;color:#e3edf2;max-width:760px}
+main{padding:24px 0 42px}.notice{background:#fff8e8;border:1px solid #edd9a5;color:#5d4a19;padding:12px 14px;border-radius:10px;margin:0 0 18px;font-size:.92rem}
+.section{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:22px;margin:0 0 18px;box-shadow:0 3px 14px #17324d0b}
+.section h2{color:var(--navy);margin:0 0 5px;font-size:1.35rem}.section-intro{color:var(--muted);margin:0 0 18px;font-size:.95rem}
+.question{border-top:1px solid var(--line);padding:17px 0 4px;margin-top:8px}.question:first-of-type{border-top:0;padding-top:0}.qhead{display:flex;gap:10px;align-items:flex-start}.number{flex:0 0 30px;height:30px;border-radius:8px;background:var(--pale);color:var(--teal);font-weight:750;display:grid;place-items:center}.qbody{flex:1;min-width:0}.category{display:block;color:var(--teal);font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.055em;margin:0 0 4px}.question label.qtext{display:block;font-weight:650;margin:0 0 10px}.question textarea{display:block;width:100%;min-height:95px;border:1px solid #bdcbd5;border-radius:9px;padding:11px 12px;font:inherit;resize:vertical;background:white;color:var(--ink)}textarea:focus,input:focus{outline:3px solid #167d8d2a;border-color:var(--teal)}
+.choices{display:flex;gap:12px;flex-wrap:wrap}.choice{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:9px;padding:9px 14px;min-width:112px;cursor:pointer}.choice:has(input:checked){border-color:var(--teal);background:var(--pale)}.choice input{accent-color:var(--teal);width:17px;height:17px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:20px}button{border:0;border-radius:10px;padding:12px 19px;font:inherit;font-weight:700;cursor:pointer}.primary{background:var(--teal);color:white}.secondary{background:white;color:var(--navy);border:1px solid var(--line)}button:hover{filter:brightness(.97)}.small{color:var(--muted);font-size:.86rem;margin-top:11px}.status{display:none;margin-top:16px;background:var(--pale);border:1px solid #b8d9de;padding:14px;border-radius:10px}.status.show{display:block}.status a{color:var(--navy);font-weight:700}footer{padding:18px;color:var(--muted);text-align:center;font-size:.86rem}
+@media(max-width:600px){.section{padding:17px}.wrap{padding:0 12px}.qhead{gap:8px}.number{flex-basis:27px;height:27px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><h1>Gym Membership &amp; Class Booking System</h1><p>Requirements Gathering Survey · This form asks about the current process, desired system goals, opinions, and feelings.</p></div></header>
+<main class="wrap">
+<div class="notice"><strong>Demo form:</strong> Answers are processed in your browser only. No answers are sent to a server. On submission, you can download a JSON file containing the responses.</div>
+<form id="survey" novalidate>
+<section class="section" aria-labelledby="open-title">
+<h2 id="open-title">Section 1: Open-Ended Questions</h2>
+<p class="section-intro">Please explain your experience in your own words. All five questions are required.</p>
+<div class="question"><div class="qhead"><span class="number">1</span><div class="qbody"><span class="category">Current State of the System</span><label class="qtext" for="q1">How are member registrations, membership renewals, and payments currently handled at the gym?</label><textarea id="q1" name="q1" required></textarea></div></div></div>
+<div class="question"><div class="qhead"><span class="number">2</span><div class="qbody"><span class="category">Current State of the System</span><label class="qtext" for="q2">What problems do you experience when checking class schedules, availability, or bookings?</label><textarea id="q2" name="q2" required></textarea></div></div></div>
+<div class="question"><div class="qhead"><span class="number">3</span><div class="qbody"><span class="category">System Goals</span><label class="qtext" for="q3">What features should the new system provide for managing memberships and booking classes?</label><textarea id="q3" name="q3" required></textarea></div></div></div>
+<div class="question"><div class="qhead"><span class="number">4</span><div class="qbody"><span class="category">Interviewee Opinions</span><label class="qtext" for="q4">What benefits or drawbacks do you expect from introducing this system?</label><textarea id="q4" name="q4" required></textarea></div></div></div>
+<div class="question"><div class="qhead"><span class="number">5</span><div class="qbody"><span class="category">Interviewee Feelings</span><label class="qtext" for="q5">How do you feel about switching to a digital membership and class-booking system, and why?</label><textarea id="q5" name="q5" required></textarea></div></div></div>
+</section>
+<section class="section" aria-labelledby="closed-title">
+<h2 id="closed-title">Section 2: Closed-Ended / Bipolar Questions</h2>
+<p class="section-intro">Choose one answer for each question. All five questions are required.</p>
+<div class="question"><div class="qhead"><span class="number">6</span><div class="qbody"><span class="category">Current State of the System</span><div class="qtext" id="q6-label">Are membership registrations or renewals currently tracked manually?</div><div class="choices" role="radiogroup" aria-labelledby="q6-label"><label class="choice"><input type="radio" name="q6" value="Yes" required> Yes</label><label class="choice"><input type="radio" name="q6" value="No" required> No</label></div></div></div></div>
+<div class="question"><div class="qhead"><span class="number">7</span><div class="qbody"><span class="category">Current State of the System</span><div class="qtext" id="q7-label">Does the gym sometimes experience confusion or conflicts with class bookings?</div><div class="choices" role="radiogroup" aria-labelledby="q7-label"><label class="choice"><input type="radio" name="q7" value="Yes" required> Yes</label><label class="choice"><input type="radio" name="q7" value="No" required> No</label></div></div></div></div>
+<div class="question"><div class="qhead"><span class="number">8</span><div class="qbody"><span class="category">System Goals</span><div class="qtext" id="q8-label">Should the new system send reminders for membership renewals and booked classes?</div><div class="choices" role="radiogroup" aria-labelledby="q8-label"><label class="choice"><input type="radio" name="q8" value="Yes" required> Yes</label><label class="choice"><input type="radio" name="q8" value="No" required> No</label></div></div></div></div>
+<div class="question"><div class="qhead"><span class="number">9</span><div class="qbody"><span class="category">Interviewee Opinions</span><div class="qtext" id="q9-label">Do you think online class booking would make the process easier for members?</div><div class="choices" role="radiogroup" aria-labelledby="q9-label"><label class="choice"><input type="radio" name="q9" value="Yes" required> Yes</label><label class="choice"><input type="radio" name="q9" value="No" required> No</label></div></div></div></div>
+<div class="question"><div class="qhead"><span class="number">10</span><div class="qbody"><span class="category">Interviewee Feelings</span><div class="qtext" id="q10-label">Would you feel comfortable using a digital system to manage memberships and class bookings?</div><div class="choices" role="radiogroup" aria-labelledby="q10-label"><label class="choice"><input type="radio" name="q10" value="Yes" required> Yes</label><label class="choice"><input type="radio" name="q10" value="No" required> No</label></div></div></div></div>
+</section>
+<div class="actions"><button class="primary" type="submit">Submit &amp; Download Responses</button><button class="secondary" type="reset">Clear Form</button></div>
+<p class="small">Tip: complete every question. The downloaded file includes the question category, question text, answer, and submission time.</p>
+<div id="status" class="status" role="status" aria-live="polite"></div>
+</form>
+</main><footer>Task 3 · Requirements Gathering · Gym Membership &amp; Class Booking System</footer>
+<script>
+const questionData = {
+ q1:{category:'Current State of the System',text:'How are member registrations, membership renewals, and payments currently handled at the gym?'},
+ q2:{category:'Current State of the System',text:'What problems do you experience when checking class schedules, availability, or bookings?'},
+ q3:{category:'System Goals',text:'What features should the new system provide for managing memberships and booking classes?'},
+ q4:{category:'Interviewee Opinions',text:'What benefits or drawbacks do you expect from introducing this system?'},
+ q5:{category:'Interviewee Feelings',text:'How do you feel about switching to a digital membership and class-booking system, and why?'},
+ q6:{category:'Current State of the System',text:'Are membership registrations or renewals currently tracked manually?'},
+ q7:{category:'Current State of the System',text:'Does the gym sometimes experience confusion or conflicts with class bookings?'},
+ q8:{category:'System Goals',text:'Should the new system send reminders for membership renewals and booked classes?'},
+ q9:{category:'Interviewee Opinions',text:'Do you think online class booking would make the process easier for members?'},
+ q10:{category:'Interviewee Feelings',text:'Would you feel comfortable using a digital system to manage memberships and class bookings?'}
+};
+const form=document.getElementById('survey');const statusBox=document.getElementById('status');
+form.addEventListener('submit',function(e){e.preventDefault();if(!form.reportValidity())return;
+ const responses={project:'Gym Membership & Class Booking System',submittedAt:new Date().toISOString(),notice:'Collected locally in the browser; not transmitted to a server.',responses:[]};
+ for(const [id,item] of Object.entries(questionData)){const field=form.elements[id];let answer='';if(field instanceof RadioNodeList){answer=field.value}else{answer=field.value.trim()}responses.responses.push({questionNumber:id.substring(1),category:item.category,question:item.text,answer:answer});}
+ const blob=new Blob([JSON.stringify(responses,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='gym-membership-class-booking-survey-responses.json';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
+ statusBox.innerHTML='<strong>Thank you!</strong> Your responses have been prepared and downloaded as a JSON file on this device. No information was sent online.';statusBox.classList.add('show');statusBox.scrollIntoView({behavior:'smooth',block:'center'});
+});
+form.addEventListener('reset',()=>{statusBox.classList.remove('show');statusBox.textContent='';});
+</script>
+</body></html>
